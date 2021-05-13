@@ -1,26 +1,27 @@
 ### 1. Start a new project - a bunch of file will be created.
- Main.activity.kt -  tells how everything will work.
- activity-main.xml - things( text, button, images...) to be included known as widgets.
- res
-   |__ drawable -for images
-   |__ layout - activity-main.xml
-   |__ mipmap - launcher icons
-   |__ values 
-   	 |__  for declaration
-   	 |__ colors.xml
-   	 |__ strings.xml - Eg need to convert the text from English to Hindi
-   	 |__ styles.xml  - styling of app
-   |__ Gradle scripts - does multiple test run and convert the program file into apk
+	Main.activity.kt -  tells how everything will work.	
+	activity-main.xml - things( text, button, images...) to be included known as widgets.
+ 	res
+   	|__ drawable -for images
+   	|__ layout - activity-main.xml
+   	|__ mipmap - launcher icons
+   	|__ values 
+   	 	|__  for declaration
+   	 	|__ colors.xml
+   	 	|__ strings.xml - Eg need to convert the text from English to Hindi
+   	 	|__ styles.xml  - styling of app
+   	|__ Gradle scripts - does multiple test run and convert the program file into apk
 
 ### 2. Adding XML layouts
-  How to add widgets ?
-  Layouts  - constraint Layout
-     - guideline
-     - Linear Layout
-     - Frame Layout
-     - Table Layout
-     - Table Row
-  here, using Constarint Layout for designing and code for it is
+	How to add widgets ?
+	Layouts  - constraint Layout
+		- guideline
+		- Linear Layout
+		- Frame Layout
+		- Table Layout
+		- Table Row
+	here, using Constarint Layout for designing and code for it is
+
       <TextView 
           android:id="@+id/helperMessage"			- Every view has a unique id
           android:layout_width="wrap_content"		- provide the width as the width of text ie to wrap it inside
@@ -30,6 +31,7 @@
           app:layout_constraintEnd_toEndOf="parent"	- its end(left) , start(right) , top parent is parent i.e the edge of screen. 
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toTopOf="parent" />
+
       <EditText
           android:id="@+id/nameInput"
           android:layout_width="wrap_content"
@@ -43,8 +45,6 @@
           app:layout_constraintEnd_toEndOf="parent"	- left parent is left edge of screen
           app:layout_constraintStart_toStartOf="parent"	- right parent is right edge of screen
           app:layout_constraintTop_toBottomOf="@+id/helperMessage" - top parent is view present above of it i.e. helperMessage
-
-
 
       <Button
           android:id="@+id/button"
