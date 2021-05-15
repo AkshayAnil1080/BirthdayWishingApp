@@ -5,7 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/cake1"
+        android:scaleType="centerCrop"/>
     <TextView
         android:id="@+id/helperMessage"
         android:layout_width="wrap_content"

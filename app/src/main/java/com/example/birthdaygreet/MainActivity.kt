@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
+import android.content.Intent
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,7 +18,10 @@ class MainActivity : AppCompatActivity() {
     fun createBirthdayCard(view: View) {
 
         val name = nameInput.editableText.toString()
+//       Toast.makeText( this, "name is $name" , Toast.LENGTH_LONG).show()
 
-        Toast.makeText( this, "name is $name" , Toast.LENGTH_LONG).show()
+        val intent  = Intent(this, BirthdayGreetActivity::class.java)
+        intent.putExtra(BirthdayGreetActivity.NAME_EXTRA, name)
+        startActivity(intent)
     }
 }
