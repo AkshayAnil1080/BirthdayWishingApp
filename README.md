@@ -1,4 +1,5 @@
-![](images/1.jpg) ![](images/2.jpg)
+<img src="https://github.com/AkshayAnil1080/BirthdayWishingApp/blob/main/images/1.jpg" height=900 width=450 /> <img src="https://github.com/AkshayAnil1080/BirthdayWishingApp/blob/main/images/2.jpg" height=900 width=450 />
+
 ### 1. Start a new project - a bunch of file will be created.
 	Main.activity.kt -  tells how everything will work.	
 	activity-main.xml - things( text, button, images...) to be included known as widgets.
