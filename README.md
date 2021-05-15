@@ -1,3 +1,4 @@
+![](images/1.jpg) ![](images/2.jpg)
 ### 1. Start a new project - a bunch of file will be created.
 	Main.activity.kt -  tells how everything will work.	
 	activity-main.xml - things( text, button, images...) to be included known as widgets.
@@ -60,3 +61,69 @@
 
 Useful commands -
 Shift+F6  - change the name everywhere in one go.
+
+### 3.
+	-> In gradle Scripts - build.grade -under the plugns sectin we need  to add - id 'kotlin-android-extensions' - to sync two pages data 
+   
+	In button section
+	android:onClick="createBirthdayCard" 
+	L Alt+Enter - create method in acticvity
+
+	In Main Activity  fun createBirthdayCard(view: View) will be created. complete the operations
+	fun createBirthdayCard(view: View) {
+
+        	val name = nameInput.editableText.toString()			    - storing the name using view Id and converting to String
+
+        	Toast.makeText( this, "name is $name" , Toast.LENGTH_LONG).show()   - to make text appear on screen for seconds based on user actions, passing the name here
+    	}
+	}	
+
+### 4: Jump from one screen to another 
+	1.
+	Using intent constructor(to move from one process to another) - two paremeters are passed, current activity and the activity to be opened.
+	Eg. clicking on link opens the youtube, sharing via whatsapp..
+	Also, we can pass data in the intent (key, value pair)
+
+  	fun createBirthdayCard(view: View) {
+
+ 		val name = nameInput.editableText.toString()				// storing the name
+        	val intent  = Intent(this, BirthdayGreetActivity::class.java)		// make intent
+		intent.putExtra("name", name)						// passing the name via intent
+        	startActivity(intent)							// start the activity
+    	}
+	2. Go to activity_birthday_greet.xml - Make a text view design and set the id - birhtdayGreet 
+	3. Receiving the data from current activity. OPEN BirhtdayGreetActivity.kt
+		companion object  // making a static variable can be used at different locations //2
+    		{
+        	const val NAME_EXTRA = "name_extra"  // const => cannot be changed now
+    		}	
+
+    		val name =  intent.getStringExtra(NAME_EXTRA) // 1. "name is the key passed in intent.putExtra
+    		birthdayGreeting.text = "Happy birthday $name"  //3 .made a text view in design and use its id to display the text. here, birthdayGreeting is the text view id of BirhtdayGreetActivit activity
+
+
+	sp for text size and dp for everything else
+	sp = scale independent pixel
+	dp = density independent pixels
+
+### 4. Add images in drawable folder - adding image view in activity_birthday_greet.xml
+	 	<ImageView
+        	android:layout_width="match_parent"
+        	android:layout_height="match_parent"
+        	android:src="@drawable/cake"
+        	android:scaleType="centerCrop"/>
+
+### 5. Some properties in  text view 
+		android:textSize="48sp"						- text size
+        	android:fontFamily="cursive"	-				- text style
+        	android:textColor="@color/design_default_color_primary"		- text color
+        	android:textStyle="bold"					- text bold
+		android:textAlignment="center"					- text alignment
+        	android:gravity="center_horizontal" />				- need to add the gravity for text alignment
+
+### 6. adding image view in mainActivity.xml 
+		<ImageView
+        	android:layout_width="match_parent"	- width till edge of screen
+       		android:layout_height="match_parent"	
+       		android:src="@drawable/cake1"		- location of image
+        	android:scaleType="centerCrop"/>	- zoom out the image from center to fil in screen if image size is small than sccreen size
